@@ -1,0 +1,17 @@
+footer{
+    background-color: #f9a03f;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Inria Serif", serif;
+}
+
+@media(max-width: 425px){
+    footer{
+        height: 15vh;
+    }
+    
+}

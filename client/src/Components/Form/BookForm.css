@@ -1,0 +1,192 @@
+.header{
+    position: relative;
+    top: -60px;
+    color: #f8dda4;
+    font-family: "Inria Serif", serif;
+}
+
+.header h1{
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.header p{
+    font-size: 26px;
+    font-style: italic;
+}
+
+.outer-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    height: 100%;
+    width: 100%;
+    max-width: 775px;
+    font-family: "Inria Serif", serif;
+    font-size: 16px;
+}
+
+.form-input{
+    display: block;
+    width: 100%;
+    /* font-family: "Inria Serif", serif; */
+    font-family: "Philosopher", serif;
+    font-size: 16px;
+
+    border-radius: 18px;
+    padding: 20px 15px;
+    margin: 20px 0;
+    /* background-color: #0C164F; */
+    /* background-color: #d45113; */
+    background-color: #f9a03f;
+    border: none;
+    outline: none;
+    /* color: #fcfbfe; */
+    color: black;
+    -webkit-box-shadow: 5px 5px 15px rgba(98, 63, 25, 0.9);
+            box-shadow: 5px 5px 15px rgba(98, 63, 25, 0.9);
+}
+
+.form-input:focus{
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+textarea{
+    resize: none;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    /* grid-template-areas: "input1 ."; */
+}
+
+
+.col-50:nth-child(odd){
+    margin-right: 20px;
+    
+}
+
+select {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #f9a03f;
+    background-image: none;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 20px 15px;
+    margin: 20px 0;
+}
+
+.select{
+    position: relative;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    /* padding: 0 1em; */
+    background: #f9a03f;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+.select:hover::after{
+    color: #f8dda4;
+}
+
+.theme{
+    border-radius: 18px;
+    outline: none;
+    background: #f9a03f;
+    margin: 20px 0;
+    width: 100%;
+    padding: 10px 15px;
+    -webkit-box-shadow: 5px 5px 15px rgba(98, 63, 25, 0.9);
+    box-shadow: 5px 5px 15px rgba(98, 63, 25, 0.9);
+}
+
+
+.btn{
+    border-radius: 18px;
+    padding: 20px;
+    letter-spacing: 4px;
+    outline: none;
+    border: none;
+    background-color: #f9a03f;
+    font-family: "Inria Serif", serif;
+    font-size: 22px;
+    /* font-family: "Philosopher", serif; */
+    transition: all 0.5s linear;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+::placeholder{
+    color: #302f2f;
+    font-family: "Inria Serif", serif;
+    font-size: 16px;
+    /* font-family: "Philosopher", serif; */
+}
+
+input, select, textarea{
+    color: black;
+}
+
+textarea:focus, input:focus {
+    color: black;
+}
+
+@media(max-width: 850px){
+    .row{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 517px){
+    .btn{
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .form-input{
+        padding: 15px 10px;
+    }
+
+    .header p{
+        display: none;
+    }
+}
+
+@media(max-width: 370px){
+    .form-container{
+        font-size: 12px;
+    }
+
+    ::placeholder{
+        font-size: 12px;
+    }
+}
