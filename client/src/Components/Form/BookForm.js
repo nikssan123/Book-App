@@ -11,6 +11,8 @@ const genres = [
             { value: 'Crime Thriller', label: 'Crime Thriller' },
             { value: 'Literary Fiction', label: 'Literary Fiction' },
             { value: 'Sci-Fi', label: 'Sci-Fi' },
+            { value: 'Short Story', label: 'Short Story' },
+            { value: 'Novel', label: 'Novel' },
             { value: 'Young Adult', label: 'Young Adult' },
         ]
     },
@@ -26,7 +28,10 @@ const genres = [
     },
     {
         label: "Other", value: "Other"
-    }
+    },
+    {
+        label: "Poetry", value: "Poetry"
+    },
     
 ]
 
@@ -117,7 +122,13 @@ export default class BookForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.addBook(this.state);        
-
+        this.setState({ 
+            title: "",
+            author: "",
+            description: "",
+            genre: "",
+            language: ""
+        });
         e.target.reset();
     }
 
