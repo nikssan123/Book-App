@@ -1,7 +1,7 @@
 import React from "react";
 import "./BookForm.css";
 import Select from "react-select";
-
+import $ from "jquery";
 
 const genres = [
     {
@@ -121,14 +121,21 @@ export default class BookForm extends React.Component{
     //render the styled form
     handleSubmit(e){
         e.preventDefault();
-        this.props.addBook(this.state);        
+        this.props.removeError();
+        this.props.addBook(this.state);
         this.setState({ 
             title: "",
             author: "",
-            description: "",
-            genre: "",
-            language: ""
+            description: ""
         });
+
+        $(".errorMessage").css("display", "block");
+        setTimeout (() => {
+            $(".errorMessage").css("display", "none");
+        }, 5000);
+
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        
         e.target.reset();
     }
 
@@ -145,13 +152,16 @@ export default class BookForm extends React.Component{
     }
 
     render(){
+        const { errors } = this.props; 
+        let message = errors.message ? "Something went wrong! Make sure you specified every field!" : "You successfully added a book! Thank you!";
         return (
             <div className="outer-container">
                 <div className="header">
                     <h1>Bookle</h1>
                     <p>Find your favorite books here!</p>
                 </div>
-        
+            
+                <div className="errorMessage">{message}</div>
 
                 <form className="form-container" onSubmit={this.handleSubmit}>
                     
